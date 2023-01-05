@@ -34,7 +34,6 @@
             "always"
         ],
         "react/prop-types": "off",
-        "react/react-in-jsx-scope": "off",
-        "react/jsx-first-prop-new-line": "always"
+        "react/react-in-jsx-scope": "off"
     }
 }
