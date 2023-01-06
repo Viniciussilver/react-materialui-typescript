@@ -1,6 +1,5 @@
 
 import { Icon, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 
 type ListLinkProps = {
@@ -17,13 +16,13 @@ export const ListLink: React.FC<ListLinkProps> = ({ to, icon, label, onClick}) =
   const { pathname } = useResolvedPath(to);
   const match = useMatch({ path: pathname, end: false });
   
-  const handleClick = () => {
+  const handleClick = () => {   
     navigate(to);
     onClick?.();
   };
 
   return (
-    <ListItemButton selected={!!match} onClick={handleClick}>
+    <ListItemButton selected={!!match} onClick={handleClick} >
       <ListItemIcon>
         <Icon>{icon}</Icon>
       </ListItemIcon>

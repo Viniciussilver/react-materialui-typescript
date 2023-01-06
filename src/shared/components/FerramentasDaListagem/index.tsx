@@ -1,4 +1,5 @@
 import { Box, Button, Icon, Paper, TextField, useTheme } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 type FerramentasDaListagemProps = {
   textoDaBusca?: string;
@@ -33,16 +34,17 @@ export const FerramentasDaListagem: React.FC<FerramentasDaListagemProps> = ({
       {mostrarInput && (
         <TextField
           size='small'
-          placeholder='Pesquisar...'
-          value={textoDaBusca}
+          placeholder='Search...'
+          value={textoDoBotao}
           onChange={e => onChange?.(e.target.value)}
         />
       )}
 
-      <Box flex={1} display='flex' justifyContent='flex-end'>
+      <Box flex={1}
+        display='flex'
+        justifyContent='flex-end'>
         {mostrarBotao && (
-          <Button
-            color='primary'
+          <Button color='primary'
             disableElevation
             variant='contained'
             onClick={onClick}
@@ -52,6 +54,7 @@ export const FerramentasDaListagem: React.FC<FerramentasDaListagemProps> = ({
           </Button>
         )}
       </Box>
+
     </Box>
   );
 };

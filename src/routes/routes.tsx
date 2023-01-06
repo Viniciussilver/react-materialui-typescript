@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 
-import { useEffect } from 'react';
 import { Dashboard } from '../pages';
-import { useDrawer } from '../shared/contexts/DrawerContext';
 import { MenuLateral } from '../shared/components';
+import { useDrawer } from '../shared/contexts/DrawerContext';
 
 export const App = () => {
   const { handleSetDrawerOptions } = useDrawer();
@@ -15,24 +16,25 @@ export const App = () => {
       {
         path: '/pagina-inicial',
         label: 'Página inicial',
-        icon: 'home'
+        icon: 'home' 
       }
       
     ]);
+
   }, []);
  
   return (
     <Router>
       <Routes>
-        <Route
-          path='/pagina-inicial'
-          element={
+        <Route path='/pagina-inicial'
+          element={(
             <MenuLateral>
               <Dashboard />
 
             </MenuLateral>
-          }
+          )}  
         />
+        
         <Route path='*' element={<Navigate to='pagina-inicial' />} />
       </Routes>
     </Router>

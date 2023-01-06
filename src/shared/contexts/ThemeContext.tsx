@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@mui/material';
 import {
   createContext,
   ReactNode,
@@ -6,10 +7,9 @@ import {
   useState,
 } from 'react';
 
-import { ThemeProvider } from '@mui/material';
 
-import { LightTheme } from '../themes/Light';
 import { DarkTheme } from '../themes/Dark';
+import { LightTheme } from '../themes/Light';
 
 type ThemeType = typeof LightTheme
 
