@@ -6,7 +6,8 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react-hooks/recommended"
     ],
     "overrides": [
     ],
@@ -17,9 +18,25 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "react-hooks",
+        "@typescript-eslint",
+        "eslint-plugin-import-helpers"
     ],
     "rules": {
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "import-helpers/order-imports": [
+            "warn",
+            {
+                "newlinesBetween": "always",
+                "groups": [ 
+                    "module",
+                    "/^@shared/",
+                    ["parent", "sibling", "index"]
+                ],
+                "alphabetize": { "order": "asc", "ignoreCase": true }
+            }
+        ],
         "indent": [
             "error",
             2
@@ -34,6 +51,17 @@
             "always"
         ],
         "react/prop-types": "off",
-        "react/react-in-jsx-scope": "off"
-    }
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-wrap-multilines": ["error", {
+            "declaration": "parens-new-line",
+             "assignment": "parens-new-line",
+             "return": "parens-new-line",
+             "arrow": "parens-new-line",
+             "condition": "parens-new-line",
+             "logical": "parens-new-line",
+             "prop": "parens-new-line"
+           }
+         ],
+         "react/jsx-max-props-per-line": [1, { "when": "multiline" }]
+        }
 }
