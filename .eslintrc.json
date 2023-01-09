@@ -41,8 +41,8 @@
             "error",
             2
         ],
-        "object-curly-spacing": ["error", "always"],  
-         "quotes": [
+        "linebreak-style": 0,
+        "quotes": [
             "error",
             "single"
         ],
