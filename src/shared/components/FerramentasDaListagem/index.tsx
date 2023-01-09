@@ -1,5 +1,4 @@
 import { Box, Button, Icon, Paper, TextField, useTheme } from '@mui/material';
-import { Link } from 'react-router-dom';
 
 type FerramentasDaListagemProps = {
   textoDaBusca?: string;
