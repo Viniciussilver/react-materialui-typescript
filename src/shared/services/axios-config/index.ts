@@ -1,19 +1,24 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
+import { Environment } from '../../environment';
+
+const { URL_BASE } = Environment;
+
 const api = axios.create({
-  baseURL: 'http://localhost:3333'
+  baseURL: URL_BASE
 });
+
 
 api.interceptors.response.use( 
   response => responseInterceptor(response),
-  response => errorInterceptor(response),
+  error => errorInterceptor(error),
 
 );
 
 const responseInterceptor = (res: AxiosResponse) => {
   return res;
 };
-
+ 
 const errorInterceptor = (error: AxiosError) => {
 
   if(error.message === 'Network Error') {
