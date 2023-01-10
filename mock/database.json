@@ -1,8 +1,40 @@
 {
     "users": [
         {
-            "id": 1,
-            "name": "Vinícius"
-        }
+            "id":1,
+            "email": "vini21@gmail.com",
+            "cidadeId": 1,
+            "nomeCompleto": "Vinícius Simões"
+          },
+        {
+            "id":2,
+            "email": "juca@gmail.com",
+            "cidadeId": 1,
+            "nomeCompleto": "Juca Silva"
+          },
+          {
+            "id": 4,
+            "cidadeId": 1,
+            "email": "maria@gmail.com",
+            "nomeCompleto": "Maria Silva"
+          },
+          {
+            "id": 5,
+            "cidadeId": 1,
+            "email": "carlos@gmail.com",
+            "nomeCompleto": "Carlos Silva"
+          },
+          {
+            "id": 6,
+            "cidadeId": 1,
+            "email": "pedro@gmail.com",
+            "nomeCompleto": "Pedro Silva"
+          },
+          {
+            "id": 7,
+            "cidadeId": 1,
+            "email": "alfredo@gmail.com",
+            "nomeCompleto": "Alfredo Silva"
+          }
     ]
 }
