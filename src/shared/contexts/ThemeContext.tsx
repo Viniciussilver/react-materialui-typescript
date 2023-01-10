@@ -3,6 +3,7 @@ import {
   createContext,
   ReactNode,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -25,7 +26,16 @@ type ProviderType = {
 const ThemeContext = createContext({} as ThemeContextTypes);
 
 export const AppThemeProvider = ({ children }: ProviderType) => {
-  const [themeName, setThemeName] = useState<'light' | 'dark'>('light');
+  const [themeName, setThemeName] = useState<'light' | 'dark'>(() => {
+
+    const themeSaved = localStorage.getItem('@themeReactMUI:');
+
+    if(themeSaved) {
+      return JSON.parse(themeSaved);
+    }  
+
+    return 'light';
+  });
 
   const toggleTheme = () =>
     setThemeName(name => name === 'light' ? 'dark' : 'light');
@@ -35,6 +45,8 @@ export const AppThemeProvider = ({ children }: ProviderType) => {
 
     return DarkTheme;
   }, [themeName]);
+
+  useEffect(() => { localStorage.setItem('@themeReactMUI:', JSON.stringify(themeName));}, [themeName]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
