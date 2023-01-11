@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 
-import { Dashboard, ListagemDeCidades } from '../pages';
+import { Dashboard, ListagemDePessoas } from '../pages';
 import { useDrawer } from '../shared/contexts/DrawerContext';
 
 export const App = () => {
@@ -18,9 +18,9 @@ export const App = () => {
         icon: 'home' 
       },
       {
-        path: '/cidades',
-        label: 'Cidades',
-        icon: 'location_city' 
+        path: '/pessoas',
+        label: 'Pessoas',
+        icon: 'people' 
       }
     ]);
 
@@ -33,9 +33,9 @@ export const App = () => {
           <Dashboard />
         )}  
       />
-      <Route path='/cidades'
+      <Route path='/pessoas'
         element={(
-          <ListagemDeCidades />
+          <ListagemDePessoas />
         )}  
       />
       {/* <Route path='/cidades/detalhe/:id'

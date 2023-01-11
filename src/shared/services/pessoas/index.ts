@@ -2,7 +2,7 @@ import { Environment } from '../../environment';
 import { api } from '../axios-config';
 
 
-type TListagemPessoa = {
+export type TListagemPessoa = {
     id: number;
     email: string;
     cidadeId: number;
@@ -14,10 +14,10 @@ type TPessoasComTotalCount = {
     totalCount: number;
 }
 
-const getAll = async (page = 1, filter = ''): Promise<TPessoasComTotalCount | Error> => { 
+const getAll = async (page = '1', filter = ''): Promise<TPessoasComTotalCount | Error> => { 
 
   try {
-    const urlRelativa = `/pessoas?page=${page}&_limit=${Environment.LIMITE_DE_LINHAS}&nomeCompleto_like=${filter}`;
+    const urlRelativa = `/users?page=${page}&_limit=${Environment.LIMITE_DE_LINHAS}&nomeCompleto_like=${filter}`;
     const { data, headers } = await api.get(urlRelativa);
 
     if(data) {
@@ -45,7 +45,7 @@ const getById = async (id: number): Promise<TListagemPessoa | Error> => {
     return new Error('Erro ao consultar o registro.');
     
   } catch (error) {
-    return new Error((error as { message: string}).message || 'Erro ao consultar o registro.');
+    return new Error(( error as { message: string}).message || 'Erro ao consultar o registro');
   }
 
 };

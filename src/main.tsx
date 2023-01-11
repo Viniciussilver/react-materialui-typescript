@@ -8,15 +8,13 @@ import { DrawerProvider } from './shared/contexts/DrawerContext';
 import { AppThemeProvider } from './shared/contexts/ThemeContext';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <BrowserRouter>  
-      <AppThemeProvider>
-        <DrawerProvider>
-          <MenuLateral>
-            <App />
-          </MenuLateral>
-        </DrawerProvider>
-      </AppThemeProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>  
+    <AppThemeProvider>
+      <DrawerProvider>
+        <MenuLateral>
+          <App />
+        </MenuLateral>
+      </DrawerProvider>
+    </AppThemeProvider>
+  </BrowserRouter>
 );

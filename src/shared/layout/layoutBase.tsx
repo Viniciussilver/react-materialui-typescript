@@ -11,7 +11,7 @@ type LayoutProps = {
     barraDeFerramentas?: ReactNode;
   };
 
-export const LayoutBase: React.FC<LayoutProps> = ({children, title, barraDeFerramentas}) => {
+export const LayoutBase: React.FC<LayoutProps> = ({ children, title, barraDeFerramentas }) => {
   const { toggleDrawerOpen } = useDrawer();
   
   const theme = useTheme();

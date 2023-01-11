@@ -49,42 +49,6 @@ export const FerramentasDeDetalhes: React.FC<FerramentasDeDetalhesProps> = ({
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
 
-  // const AUTH_ADMIN_CONFIG = 'zSnk0dI5ivPxX1M7bUHwAuopFjiS1B';
-
-  
-
-  // const data = JSON.stringify({
-  //   firstName: 'Vinicius',
-  //   lastName: 'Freitas',
-  //   email: 'vinicius77@gmail.com',
-  //   password: '12345abc'  
-  // });
-  
-  // const request = async () => {
-
-  //   const response = await axios.post('https://test-dev.tikal.tech/adm/admin', data , {
-  //     headers: {
-  //       'x-api-key': AUTH_ADMIN_CONFIG,
-  //       'Content-Type': 'application/json',
-  //     }}
-  //   );
-
-  //   console.log(response);
-  // };
-
-  // request();
-
-  const teste = async () => {
-
-    localStorage.setItem('teste', JSON.stringify({vini: 'vini'}));
-  };
-
-  const ola = () => {
-    teste();
-  };
-  ola();
-
-
   return (
     <Box
       gap={1}
@@ -96,7 +60,7 @@ export const FerramentasDeDetalhes: React.FC<FerramentasDeDetalhesProps> = ({
       height={theme.spacing(6)}
       component={Paper}
     >
-
+  
       {(mostrarBotaoSalvar && !mostrarBotaoSalvarCarregando) && (
         <Button
           color='primary'
@@ -127,9 +91,6 @@ export const FerramentasDeDetalhes: React.FC<FerramentasDeDetalhesProps> = ({
         <Skeleton width={108} height={55}/>
       )}
 
-
-    
-
       {(mostrarBotaoApagar && !mostrarBotaoApagarCarregando) && (
         <Button
           color='primary'
@@ -144,8 +105,6 @@ export const FerramentasDeDetalhes: React.FC<FerramentasDeDetalhesProps> = ({
       (
         <Skeleton width={108} height={55}/>
       )}
-
-
 
       {(mostrarBotaoNovo && !mostrarBotaoNovoCarregando && !smDown) && (
         <Button

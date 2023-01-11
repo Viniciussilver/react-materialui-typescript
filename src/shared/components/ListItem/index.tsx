@@ -9,7 +9,7 @@ type ListLinkProps = {
     onClick: (() => void) | undefined;
 }
 
-export const ListLink: React.FC<ListLinkProps> = ({ to, icon, label, onClick}) => {
+export const ListLink: React.FC<ListLinkProps> = ({ to, icon, label, onClick }) => {
 
   const navigate = useNavigate();
 

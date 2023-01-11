@@ -34,7 +34,7 @@ export const FerramentasDaListagem: React.FC<FerramentasDaListagemProps> = ({
         <TextField
           size='small'
           placeholder='Search...'
-          value={textoDoBotao}
+          value={textoDaBusca}
           onChange={e => onChange?.(e.target.value)}
         />
       )}
