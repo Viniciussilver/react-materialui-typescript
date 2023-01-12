@@ -1,7 +1,7 @@
 import { Box, Button, Icon, Paper, TextField, useTheme } from '@mui/material';
 
 type FerramentasDaListagemProps = {
-  textoDaBusca?: string;
+  textoDaBusca: string;
   mostrarInput?: boolean;
   onChange?: (e: string) => void;
   textoDoBotao?: string;

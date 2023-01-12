@@ -37,7 +37,7 @@ export const LayoutBase: React.FC<LayoutProps> = ({ children, title, barraDeFerr
           </IconButton>
         )}
 
-        <Typography variant={smDown ? 'h5' : mdDown ? 'h4' : 'h3'}
+        <Typography variant={ smDown ? 'h5' : mdDown ? 'h4' : 'h3'} 
           overflow='hidden'
           whiteSpace='nowrap'
           textOverflow='ellipsis'>
