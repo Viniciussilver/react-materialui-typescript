@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 
-import { Dashboard, ListagemDePessoas } from '../pages';
+import { Dashboard, DetalheDePessoas, ListagemDePessoas } from '../pages';
 import { useDrawer } from '../shared/contexts/DrawerContext';
 
 export const App = () => {
@@ -38,11 +38,11 @@ export const App = () => {
           <ListagemDePessoas />
         )}  
       />
-      {/* <Route path='/cidades/detalhe/:id'
+      <Route path='/pessoas/detalhe/:id'
         element={(
-          <ListagemDeCidades />
+          <DetalheDePessoas />
         )}  
-      /> */}
+      />
       <Route path='*' element={<Navigate to='pagina-inicial' />} />
     </Routes>
   );
